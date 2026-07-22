@@ -20,7 +20,7 @@ body {
     --smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Navbar */
+/* Navbar unificat cu Logo */
 .navbar {
     position: fixed;
     top: 0;
@@ -28,21 +28,38 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px 50px;
     background-color: rgba(5, 5, 5, 0.95);
     border-bottom: 2px solid var(--neon-purple);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
 
-.logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
-.logo span { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    filter: drop-shadow(0 0 8px var(--neon-purple));
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.logo-text { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+.logo-text span { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+
 .nav-links { display: flex; list-style: none; }
 .nav-links li { margin-left: 30px; }
 .nav-links a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; text-transform: uppercase; transition: color 0.3s; position: relative; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--neon-purple); transition: width 0.3s; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a:hover { color: var(--neon-purple); }
+
+@keyframes pulseGlow {
+    0%, 100% { filter: drop-shadow(0 0 5px var(--neon-purple)); }
+    50% { filter: drop-shadow(0 0 15px var(--neon-purple)); }
+}
 
 /* Hero */
 .hero-section {
