@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+:root {
+    --neon-purple: #a020f0;
+    --dark-purple: #320050;
+    --dark-bg: #050505;
+    --card-bg: #0f0f14;
+    --smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(5, 5, 5, 0.95);
+    border-bottom: 2px solid var(--neon-purple);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+.logo span { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; text-transform: uppercase; transition: color 0.3s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--neon-purple); transition: width 0.3s; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover { color: var(--neon-purple); }
+
+/* Hero */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;
+}
+.animate-text { font-size: 60px; font-weight: 900; letter-spacing: 3px; margin-bottom: 20px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards 0.3s; }
+.animate-subtext { font-size: 20px; color: #aaaaaa; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards 0.6s; }
+.highlight { color: var(--neon-purple); text-shadow: 0 0 20px rgba(160, 32, 240, 0.8); }
+
+.btn-primary {
+    display: inline-block; padding: 15px 40px; background-color: var(--neon-purple); color: #fff; text-transform: uppercase; font-weight: 700; text-decoration: none; border-radius: 5px; box-shadow: 0 0 15px rgba(160, 32, 240, 0.4); opacity: 0; animation: fadeInUp 1s forwards 0.9s; transition: transform 0.1s var(--smooth), box-shadow 0.3s, background-color 0.3s;
+}
+.btn-primary:hover { background-color: #7b12c1; box-shadow: 0 0 25px var(--neon-purple); }
+.btn-primary:active { transform: scale(0.95); }
+
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Sectiunea Preturi */
+.services-section { padding: 100px 50px; background-color: #0b0b0f; }
+.section-title { font-size: 40px; text-align: center; font-weight: 900; margin-bottom: 10px; }
+.section-title span { color: var(--neon-purple); text-shadow: 0 0 10px rgba(160, 32, 240, 0.5); }
+.section-subtitle { text-align: center; color: #666; margin-bottom: 50px; }
+.services-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+
+.service-card {
+    background-color: var(--card-bg); border: 1px solid #1a1a24; padding: 40px 30px; border-radius: 12px; width: 320px; text-align: center; position: relative; transition: transform 0.3s var(--smooth), border-color 0.3s, box-shadow 0.3s;
+}
+.service-card:hover { transform: translateY(-15px); border-color: var(--neon-purple); box-shadow: 0 10px 30px rgba(160, 32, 240, 0.2); }
+.service-card h3 { font-size: 22px; margin-bottom: 15px; }
+.service-card .price { font-size: 45px; font-weight: 900; color: #fff; margin-bottom: 25px; }
+.service-card .price span { font-size: 18px; color: var(--neon-purple); }
+.service-card ul { list-style: none; text-align: left; margin-bottom: 30px; }
+.service-card ul li { margin-bottom: 12px; color: #ccc; font-size: 14px; position: relative; padding-left: 20px; }
+.service-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--neon-purple); font-weight: bold; }
+
+.service-card.featured { border: 2px solid var(--neon-purple); box-shadow: 0 0 20px rgba(160, 32, 240, 0.15); }
+.service-card .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: var(--neon-purple); color: #fff; padding: 5px 15px; font-size: 11px; font-weight: 700; text-transform: uppercase; border-radius: 20px; box-shadow: 0 0 10px var(--neon-purple); }
+
+.btn-card { display: block; padding: 12px; background-color: transparent; border: 2px solid var(--neon-purple); color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; border-radius: 5px; transition: background 0.3s, transform 0.1s; }
+.btn-card:hover { background-color: var(--neon-purple); }
+.btn-card:active { transform: scale(0.95); }
+
+/* Galerie */
+.gallery-section { padding: 100px 50px; background-color: var(--dark-bg); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+.gallery-item { position: relative; border-radius: 8px; overflow: hidden; height: 250px; border: 1px solid #151515; transition: transform 0.3s var(--smooth), border-color 0.3s; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.gallery-item:hover { transform: scale(1.03); border-color: var(--neon-purple); }
+.gallery-item:hover img { transform: scale(1.08); }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(5, 5, 5, 0.95)); opacity: 0; display: flex; align-items: flex-end; padding: 20px; transition: opacity 0.3s; }
+.gallery-item:hover .overlay { opacity: 1; }
+.overlay .text { font-size: 16px; font-weight: 700; text-transform: uppercase; color: #fff; border-left: 3px solid var(--neon-purple); padding-left: 10px; }
+
+/* Programari */
+.booking-section { padding: 100px 20px; background-color: #0b0b0f; }
+.booking-container { max-width: 500px; margin: 0 auto; background-color: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid #1a1a24; }
+.input-group { margin-bottom: 20px; }
+.input-group input, .input-group select { width: 100%; padding: 15px; background-color: #050505; border: 1px solid #222; border-radius: 5px; color: #fff; font-size: 16px; transition: border-color 0.3s; outline: none; }
+.input-group input:focus, .input-group select:focus { border-color: var(--neon-purple); }
+.btn-submit { width: 100%; padding: 15px; background-color: var(--neon-purple); border: none; color: #fff; font-size: 16px; font-weight: 700; text-transform: uppercase; border-radius: 5px; cursor: pointer; transition: background 0.3s, transform 0.1s; }
+.btn-submit:hover { background-color: #7b12c1; }
+.btn-submit:active { transform: scale(0.97); }
+
+/* Social */
+.social-section { padding: 80px 20px; background-color: var(--dark-bg); text-align: center; border-top: 1px solid #151515; }
+.social-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+.social-btn { padding: 12px 30px; color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; border-radius: 4px; transition: transform 0.1s; }
+.instagram { background-color: #8a3ab9; } .facebook { background-color: #1877f2; } .tiktok { background-color: #000; border: 1px solid var(--neon-purple); }
+.social-btn:active { transform: scale(0.95); }
+
+/* WhatsApp Flotant */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 999; transition: transform 0.3s var(--smooth); }
+.whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+.whatsapp-icon { width: 32px; height: 32px; }
+
+footer { text-align: center; padding: 25px; background-color: var(--dark-bg); border-top: 1px solid #151515; color: #444; font-size: 13px; }
