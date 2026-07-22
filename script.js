@@ -26,7 +26,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     const service = document.getElementById('service-select').value;
     
     // Pune numărul tău aici când dorești să fie activ real!
-    const myPhoneNumber = "40712345678"; 
+    const myPhoneNumber = "40743804432"; 
     const message = `Salut ZVG Garage! Numele meu este ${name}. Doresc o programare pentru serviciul: ${service}. Numărul meu de contact este: ${phone}.`;
     const whatsappUrl = `https://wa.me{myPhoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
