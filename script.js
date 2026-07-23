@@ -27,5 +27,6 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     
     const textMessage = "Salut ZVG Garage! Numele meu este " + name + ". Doresc o programare pentru serviciul: " + service + ". Numarul meu de contact este: " + phone;
     
-    window.open("https://wa.me" + encodeURIComponent(textMessage), "_blank");
+    // Folosim link-ul oficial API pentru a evita eroarea pe iPhone
+    window.location.href = "https://whatsapp.com" + encodeURIComponent(textMessage);
 });
