@@ -25,7 +25,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service-select').value;
     
-    // Numărul tău real a fost configurat cu succes aici
+    // Numarul tau real setat corect in format international cu ghilimele
     const myPhoneNumber = "40743804432"; 
     
     const message = `Salut ZVG Garage! Numele meu este ${name}. Doresc o programare pentru serviciul: ${service}. Numărul meu de contact este: ${phone}.`;
