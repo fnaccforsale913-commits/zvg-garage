@@ -20,7 +20,7 @@ body {
     --smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Navbar unificat cu Logo */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -35,17 +35,8 @@ body {
     z-index: 1000;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-icon {
-    filter: drop-shadow(0 0 8px var(--neon-purple));
-    animation: pulseGlow 2s infinite ease-in-out;
-}
-
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-icon { filter: drop-shadow(0 0 8px var(--neon-purple)); animation: pulseGlow 2s infinite ease-in-out; }
 .logo-text { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
 .logo-text span { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
 
@@ -79,7 +70,7 @@ body {
 
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-/* Sectiunea Preturi */
+/* Prețuri */
 .services-section { padding: 100px 50px; background-color: #0b0b0f; }
 .section-title { font-size: 40px; text-align: center; font-weight: 900; margin-bottom: 10px; }
 .section-title span { color: var(--neon-purple); text-shadow: 0 0 10px rgba(160, 32, 240, 0.5); }
@@ -115,15 +106,12 @@ body {
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay .text { font-size: 16px; font-weight: 700; text-transform: uppercase; color: #fff; border-left: 3px solid var(--neon-purple); padding-left: 10px; }
 
-/* Programari */
+/* Programari Link Nativ */
 .booking-section { padding: 100px 20px; background-color: #0b0b0f; }
-.booking-container { max-width: 500px; margin: 0 auto; background-color: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid #1a1a24; }
-.input-group { margin-bottom: 20px; }
-.input-group input, .input-group select { width: 100%; padding: 15px; background-color: #050505; border: 1px solid #222; border-radius: 5px; color: #fff; font-size: 16px; transition: border-color 0.3s; outline: none; }
-.input-group input:focus, .input-group select:focus { border-color: var(--neon-purple); }
-.btn-submit { width: 100%; padding: 15px; background-color: var(--neon-purple); border: none; color: #fff; font-size: 16px; font-weight: 700; text-transform: uppercase; border-radius: 5px; cursor: pointer; transition: background 0.3s, transform 0.1s; }
-.btn-submit:hover { background-color: #7b12c1; }
-.btn-submit:active { transform: scale(0.97); }
+.booking-container { max-width: 500px; margin: 0 auto; background-color: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid #1a1a24; text-align: center; }
+.btn-submit-link { display: block; width: 100%; padding: 18px; background-color: var(--neon-purple); color: #fff; text-decoration: none; font-size: 16px; font-weight: 700; text-transform: uppercase; border-radius: 5px; box-shadow: 0 0 15px rgba(160, 32, 240, 0.4); transition: background 0.3s, transform 0.1s; }
+.btn-submit-link:hover { background-color: #7b12c1; box-shadow: 0 0 25px var(--neon-purple); }
+.btn-submit-link:active { transform: scale(0.97); }
 
 /* Social */
 .social-section { padding: 80px 20px; background-color: var(--dark-bg); text-align: center; border-top: 1px solid #151515; }
@@ -132,7 +120,7 @@ body {
 .instagram { background-color: #8a3ab9; } .facebook { background-color: #1877f2; } .tiktok { background-color: #000; border: 1px solid var(--neon-purple); }
 .social-btn:active { transform: scale(0.95); }
 
-/* WhatsApp Flotant */
+/* WhatsApp Flotant Nativ */
 .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 999; transition: transform 0.3s var(--smooth); }
 .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 .whatsapp-icon { width: 32px; height: 32px; }
